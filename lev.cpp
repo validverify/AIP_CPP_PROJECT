@@ -11,7 +11,9 @@ std::string read_file_to_string(const std::string &file_path)
     {
         throw std::runtime_error("Failed to open file: " + file_path);
     }
-    std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    std::string content = buffer.str();
     return content;
 }
 
