@@ -1,6 +1,6 @@
 #include "headers.h"
 
-ImageData::ImageData() : data(nullptr), width(0), height(0), channels(0)
+ImageData::ImageData()
 {
 }
 
