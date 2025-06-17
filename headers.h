@@ -46,6 +46,7 @@ std::string read_file_to_string(const std::string &file_path);
  * \param stego Путь для сохранения стего-изображения
  * \param msg_file Путь к файлу с встраиваемым сообщением
  * \param q_str Параметр квантования
+ * \throw std::runtime_error Если файл не может быть открыт
  */
 void qim_embed(const std::string &original, const std::string &stego, const std::string &msg_file,
 			   const std::string &q_str);
@@ -55,6 +56,7 @@ void qim_embed(const std::string &original, const std::string &stego, const std:
  * \param stego Путь к стего-изображению
  * \param q_str Параметр квантования
  * \param output_file Путь для сохранения извлеченного сообщения
+ * \throw std::runtime_error Если файл не может быть открыт
  */
 void qim_extract(const std::string &stego, const std::string &q_str, const std::string &output_file);
 
@@ -63,6 +65,7 @@ void qim_extract(const std::string &stego, const std::string &q_str, const std::
  * \param original Путь к исходному изображению
  * \param stego Путь для сохранения стего-изображения
  * \param msg_file Путь к файлу с сообщением для встраивания
+ * \throw std::runtime_error Если файл не может быть открыт
  */
 void lsb_embed(const std::string &original, const std::string &stego, const std::string &msg_file);
 
@@ -70,6 +73,7 @@ void lsb_embed(const std::string &original, const std::string &stego, const std:
  * \brief Извлекает сообщение из стего-изображения методом LSB
  * \param stego Путь к стего-изображению
  * \param output_file Путь для сохранения извлеченного сообщения
+ * \throw std::runtime_error Если файл не может быть открыт
  */
 void lsb_extract(const std::string &stego, const std::string &output_file);
 
@@ -78,6 +82,7 @@ void lsb_extract(const std::string &stego, const std::string &output_file);
  * \param original Путь к исходному изображению
  * \param stego Путь для сохранения стего-изображения
  * \param msg_file Путь к файлу с сообщением для встраивания
+ * \throw std::runtime_error Если файл не может быть открыт
  */
 void cd_embed(const std::string &original, const std::string &stego, const std::string &msg_file);
 
@@ -85,6 +90,7 @@ void cd_embed(const std::string &original, const std::string &stego, const std::
  * \brief Извлекает сообщение из стего-изображения методом CD
  * \param stego Путь к стего-изображению
  * \param output_file Путь для сохранения извлеченного сообщения
+ * \throw std::runtime_error Если файл не может быть открыт
  */
 void cd_extract(const std::string &stego, const std::string &output_file);
 
