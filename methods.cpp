@@ -59,7 +59,7 @@ void ChannelSwapping::encode(const std::string &img_path, const std::string &sen
     for (long long int i = 0; i < pixels.size() && bit_pos < total_bits; i += 3)
     {
         char current_char = sens_data[bit_pos / 8];
-        bool bit = (current_char >> (7 - (bit_pos % 8))) & 1;
+        bool bit = (current_char >> (7 - (bit_pos % 8))) & 1; // Get bit pos than inverse and shifts to this pos comp with 00000001 
 
         if (bit)
         {
