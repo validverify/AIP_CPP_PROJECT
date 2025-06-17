@@ -63,6 +63,7 @@ void ChannelSwapping::encode(const std::string &img_path, const std::string &sen
 
         if (bit)
         {
+            // R < G
             if (pixels[i] <= pixels[i + 1])
             {
                 std::swap(pixels[i], pixels[i + 1]);
@@ -70,6 +71,7 @@ void ChannelSwapping::encode(const std::string &img_path, const std::string &sen
         }
         else
         {
+            // R > G
             if (pixels[i] >= pixels[i + 1])
             {
                 std::swap(pixels[i], pixels[i + 1]);
