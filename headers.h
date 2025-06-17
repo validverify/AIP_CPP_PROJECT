@@ -29,7 +29,6 @@ struct ImageData
 	int channels;
 
 	ImageData();
-	~ImageData();
 };
 
 /**

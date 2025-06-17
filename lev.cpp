@@ -4,12 +4,6 @@ ImageData::ImageData() : data(nullptr), width(0), height(0), channels(0)
 {
 }
 
-ImageData::~ImageData()
-{
-    if (data)
-        stbi_image_free(data);
-}
-
 std::string read_file_to_string(const std::string &file_path)
 {
     std::ifstream file(file_path, std::ios::binary);
