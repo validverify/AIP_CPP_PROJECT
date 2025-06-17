@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         cd_extract(argv[3], argv[4]);
     else if ((strcmp(argv[1], "cs") == 0) && (strcmp(argv[2], "e") == 0)) {
         ChannelSwapping cs;
-        cs.encode(argv[4], argv[5], argv[3]);
+        cs.encode(argv[4], argv[3], argv[5]);
     }
     else if ((strcmp(argv[1], "cs") == 0) && (strcmp(argv[2], "x") == 0)) {
         ChannelSwapping cs;
