@@ -2,8 +2,6 @@
 #include "headers.h"
 #include <doctest/doctest.h>
 
-namespace fs = std::filesystem;
-
 void create_test_file(const std::string &path, const std::string &content)
 {
     std::ofstream file(path, std::ios::binary);
@@ -25,7 +23,7 @@ TEST_CASE("Testing read_file_to_string")
         create_test_file(test_file, content);
 
         CHECK(read_file_to_string(test_file) == content);
-        fs::remove(test_file);
+        std::filesystem::remove(test_file);
     }
 
     SUBCASE("Reading non-existent file")
@@ -64,10 +62,10 @@ TEST_CASE("Testing QIM steganography")
         CHECK_THROWS_AS(qim_extract("non_existent.png", q_value, output_file), std::runtime_error);
     }
 
-    fs::remove(original_img);
-    fs::remove(stego_img);
-    fs::remove(msg_file);
-    fs::remove(output_file);
+    std::filesystem::remove(original_img);
+    std::filesystem::remove(stego_img);
+    std::filesystem::remove(msg_file);
+    std::filesystem::remove(output_file);
 }
 
 TEST_CASE("Testing LSB steganography")
@@ -99,10 +97,10 @@ TEST_CASE("Testing LSB steganography")
         CHECK_THROWS_AS(lsb_extract("non_existent.png", output_file), std::runtime_error);
     }
 
-    fs::remove(original_img);
-    fs::remove(stego_img);
-    fs::remove(msg_file);
-    fs::remove(output_file);
+    std::filesystem::remove(original_img);
+    std::filesystem::remove(stego_img);
+    std::filesystem::remove(msg_file);
+    std::filesystem::remove(output_file);
 }
 
 TEST_CASE("Testing CD steganography")
@@ -137,8 +135,8 @@ TEST_CASE("Testing CD steganography")
         CHECK_THROWS_AS(cd_extract("non_existent.png", output_file), std::runtime_error);
     }
 
-    fs::remove(original_img);
-    fs::remove(stego_img);
-    fs::remove(msg_file);
-    fs::remove(output_file);
+    std::filesystem::remove(original_img);
+    std::filesystem::remove(stego_img);
+    std::filesystem::remove(msg_file);
+    std::filesystem::remove(output_file);
 }
