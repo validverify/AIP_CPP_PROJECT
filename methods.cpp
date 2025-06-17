@@ -42,7 +42,6 @@ void BasicImage::free_space()
     stbi_image_free(loaded_image);
 }
 
-// Реализации методов ChannelSwapping
 void ChannelSwapping::encode(const std::string &img_path, const std::string &sens_data, const std::string &output_path)
 {
     BasicImage image(img_path);
@@ -114,7 +113,6 @@ long long int ChannelSwapping::get_last_encoded_size() const
     return last_encoded_size;
 }
 
-// Реализации методов MidBitChange
 void MidBitChange::encode(const std::string &img_path, const std::string &sens_data, const std::string &output_path)
 {
     BasicImage image(img_path);
@@ -169,7 +167,6 @@ std::string MidBitChange::decode(const std::string &img_path, const size_t sens_
     return result;
 }
 
-// Реализации методов EOFHiding
 void EOFHiding::encode(const std::string &img_path, const std::string &sens_data, const std::string &output_path)
 {
     std::ifstream in(img_path, std::ios::binary);
