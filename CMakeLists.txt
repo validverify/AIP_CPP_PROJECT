@@ -19,8 +19,8 @@ FetchContent_MakeAvailable(stb)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_BINARY_DIR}/_deps/stb-src/)
 
-add_executable(stego_program main.cpp lev.cpp t.cpp stb_impl.cpp)
-add_executable(stego_tests test.cpp lev.cpp methods-tests.cpp t.cpp stb_impl.cpp)
+add_executable(stego_program main.cpp lev.cpp methods.cpp stb_impl.cpp)
+add_executable(stego_tests test.cpp lev.cpp methods-tests.cpp methods.cpp stb_impl.cpp)
 target_link_libraries(stego_tests PRIVATE doctest::doctest)
 
 enable_testing()
