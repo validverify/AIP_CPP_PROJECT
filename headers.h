@@ -1,9 +1,9 @@
 /**
- * \file lev.h
+ * \file headers.h
  * \brief Заголовочный файл, содержащий объявления функций, используемых для стеганографических операций
  */
 
-#ifndef LEV_H
+#ifndef HEADERS_H
 #include "stb_image.h"
 #include "stb_image_write.h"
 #include <bitset>
@@ -16,12 +16,10 @@
 #include <string>
 #include <vector>
 #include <filesystem>
+#include <sstream>
 
 /**
  * \brief Структура для хранения данных изображения
- *
- * Содержит указатель на данные изображения, а также информацию о его размерах
- * и количестве цветовых каналов.
  */
 struct ImageData
 {

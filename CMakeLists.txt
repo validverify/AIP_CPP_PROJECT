@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.25)
-project(AIP PROJECT CPP)
+project(Steganography)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -18,8 +19,8 @@ FetchContent_MakeAvailable(stb)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_BINARY_DIR}/_deps/stb-src/)
 
-add_executable(stego_program main.cpp lev.cpp stb_impl.cpp)
-add_executable(stego_tests test.cpp lev.cpp stb_impl.cpp)
+add_executable(stego_program main.cpp lev.cpp t.cpp stb_impl.cpp)
+add_executable(stego_tests test.cpp lev.cpp methods-tests.cpp t.cpp stb_impl.cpp)
 target_link_libraries(stego_tests PRIVATE doctest::doctest)
 
 enable_testing()
